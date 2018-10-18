@@ -1,0 +1,43 @@
+<script type="text/javascript">
+var j =jQuery.noConflict();
+
+
+var btncart = j('.box-tocart').html();
+j('.box-tocart').html("");
+
+
+function qtyChecker(){
+	
+	var url = 'http://server-v894.vaimo.com/__ic/testapi/index.php?sku=A00005'
+			j.ajax({
+			  crossOrigin: true,
+			  url: url,
+			  proxy: "proxy.php",
+			  success: function(data) {
+				  //alert(data);
+				  var myArr = JSON.parse(data);
+				  if(myArr[0].instock == 0){
+					   j( '.box-tocart' ).html("");
+					   qtyChecker();
+				  }
+				  else
+				  {
+					   j( '.box-tocart' ).html(btncart);
+					   
+				  }
+				}
+			})
+			.done(function( data, textStatus, jqXHR ) {
+				  var myArr = JSON.parse(data);
+				//alert(myArr[0].instock);
+				console.log(myArr[0].instock);
+			});	
+}
+
+
+
+j( document ).ready(function() {
+	
+			 qtyChecker();
+}); 
+</script>

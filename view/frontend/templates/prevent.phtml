@@ -1,0 +1,55 @@
+<script type = "text/javascript" >
+	var j = jQuery.noConflict();
+    var interval = setInterval(updateDiv,3000);
+	var myClass = "";
+function qtyChecker() {
+
+	var url = 'http://server-v894.vaimo.com/__ic/testapi/index.php?sku=A00005'
+	j.ajax({
+			crossOrigin: true,
+			url: url,
+			proxy: "proxy.php",
+			success: function (data) {
+				//alert(data);
+				var myArr = JSON.parse(data);
+				if (myArr[0].instock == 0) {
+					alert("Sorry product currently out of stock.");
+					window.location.href = window.location.origin + "/checkout/cart/"
+				} else {
+
+					j('.action.primary.checkout').trigger("click")
+
+				}
+			}
+		})
+		.done(function (data, textStatus, jqXHR) {
+			var myArr = JSON.parse(data);
+			//alert(myArr[0].instock);
+			console.log(myArr[0].instock);
+		});
+}
+
+
+function updateDiv() {
+	console.log(myClass);
+	var placebtn = j('<input id="test" class=" action primary" onclick="qtyChecker()" type="button" value="Place Order"/>');
+	j('.action.primary.checkout').hide();
+	
+	
+	if (typeof myClass === "undefined") {
+		j('.action.primary.checkout').before(placebtn);
+		myClass = j("#test").attr("class");
+	} else if (myClass === "") {
+		j('.action.primary.checkout').before(placebtn);
+		myClass = j("#test").attr("class");}
+	else{
+		clearInterval(interval);
+	}
+	console.log(myClass);
+}
+
+
+j(document).ajaxComplete(function () {
+	interval = setInterval(updateDiv,3000);
+}); 
+</script>

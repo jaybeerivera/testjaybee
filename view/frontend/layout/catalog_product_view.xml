@@ -1,0 +1,10 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+		<referenceBlock name="head">
+                <block class="Magento\Framework\View\Element\Template"  name="reqjs" as="reqjs" template="Test_Jaybee::reqjs.phtml"/>
+        </referenceBlock>
+        <referenceContainer name="content">
+            <block class="Magento\Framework\View\Element\Template" name="custom.block" template="Test_Jaybee::test.phtml" after="product.info" />
+        </referenceContainer>
+    </body>
+</page>
