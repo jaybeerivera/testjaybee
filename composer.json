@@ -2,16 +2,21 @@
   "name": "jaybeerivera/testjaybee",
   "description": "A Magento 2 module that modify add to cart button and place order button.",
   "type": "magento2-module",
-  "version": "1.0.0-stable",
-  "license": [
-    "commercial"
+  "version": "10.0
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Jaybee
+      "email": "jaybeerivera02@yahoo.com",
+      "role": "Technical Support"
+    }
   ],
-  "repositories": [
-{
   "autoload": {
-    "files": [ "registration.php" ],
+    "files": [
+      "registration.php"
+    ],
     "psr-4": {
-      "jaybeerivera\\testjaybee\\": ""
+      "Test\\Jaybee\\": ""
     }
   }
 }
