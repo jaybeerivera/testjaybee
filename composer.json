@@ -2,10 +2,9 @@
   "name": "Test/Jaybee",
   "description": "A Magento 2 module that modify add to cart button and place order button.",
   "type": "magento2-module",
-  "version": "1.0.0",
+  "version": "1.0.0-stable",
   "license": [
-    "OSL-3.0",
-    "AFL-3.0"
+    "commercial"
   ],
   "require": {
     "php": "~5.5.0|~5.6.0|~7.0.0",
