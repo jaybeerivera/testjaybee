@@ -1,5 +1,5 @@
 {
-  "name": "Test/Jaybee",
+  "name": "jaybeerivera/testjaybee",
   "description": "A Magento 2 module that modify add to cart button and place order button.",
   "type": "magento2-module",
   "version": "1.0.0-stable",
