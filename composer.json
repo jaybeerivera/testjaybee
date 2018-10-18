@@ -11,19 +11,13 @@
       "role": "Technical Support"
     }
   ],
-  
+  "minimum-stability": "alpha",
     "repositories": [
         {
             "type": "vcs",
             "url": "https://github.com/jaybeerivera/testjaybee.git"
         }
-    ],
-    "require": {
-        "monolog/monolog": "dev-bugfix"
-    }
-
-  
-  
+    ], 
   "autoload": {
     "files": [
       "registration.php"
