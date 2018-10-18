@@ -12,7 +12,7 @@ function qtyChecker(){
 			j.ajax({
 			  crossOrigin: true,
 			  url: url,
-			  proxy: "proxy.php",
+			  proxy: "http://stampdevsite.regalmobility.com/proxy.php",
 			  success: function(data) {
 				  //alert(data);
 				  var myArr = JSON.parse(data);
