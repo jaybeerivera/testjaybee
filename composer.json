@@ -8,14 +8,10 @@
   ],
   "repositories": [
 {
-"type": "git",
-"url": "https://github.com/jaybeerivera/testjaybee.git"
-}
-],
   "autoload": {
     "files": [ "registration.php" ],
     "psr-4": {
-      "Test\\Jaybee\\": ""
+      "jaybeerivera\\testjaybee\\": ""
     }
   }
 }
